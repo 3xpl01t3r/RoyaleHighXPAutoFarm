@@ -160,6 +160,8 @@ local function getLocker()
 end
 
 local function getBooks()
+    repeat task.wait() until #localPlayer.Locker:GetChildren() == 5
+    
     local locker = getLocker()
     fireclickdetector(locker.ClickDetector)
     services.ReplicatedStorage.Lockers.Code:FireServer(locker, "0000", "Create")
@@ -171,5 +173,4 @@ local function getBooks()
     localPlayer.PlayerGui.Locker.Enabled = false
 end
 
-task.wait(2)
 getBooks()
