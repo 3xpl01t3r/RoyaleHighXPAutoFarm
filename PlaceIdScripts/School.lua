@@ -118,9 +118,9 @@ local classFuncs = {
 }
 
 classRemotes.Starting.OnClientEvent:Connect(function(class)
-    game:GetService("ReplicatedStorage").Classes.Starting:FireServer()
     local class = string.lower(string.gsub(class, " class", ""))
     if not classFuncs[class] then return end
+    game:GetService("ReplicatedStorage").Classes.Starting:FireServer()
 
     local newConnections = classFuncs[class]()
 
