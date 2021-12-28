@@ -171,4 +171,5 @@ local function getBooks()
     localPlayer.PlayerGui.Locker.Enabled = false
 end
 
+task.wait(2)
 getBooks()
