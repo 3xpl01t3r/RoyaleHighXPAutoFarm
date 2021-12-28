@@ -177,17 +177,15 @@ end
 
 local function getBooks()
     local locker = getLocker()
-    fireclickdetector(locker.ClickDetector, 5); task.wait(1)
-    fireclickdetector(locker.ClickDetector, 5); task.wait(1)
-    services.ReplicatedStorage.Lockers.Code:FireServer(locker, "0000", "Create"); task.wait(1)
+    fireclickdetector(locker.ClickDetector)
+    services.ReplicatedStorage.Lockers.Code:FireServer(locker, "0000", "Create")
 
     for _,book in next, localPlayer.Locker:GetChildren() do
         services.ReplicatedStorage.Lockers.Contents:InvokeServer("Take", book)
-        task.wait(.1)
     end
 
     localPlayer.PlayerGui.Locker.Enabled = false
-end;
+end
 
 goToLocker()
 getBooks()
