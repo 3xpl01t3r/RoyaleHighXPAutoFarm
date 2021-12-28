@@ -126,7 +126,7 @@ classRemotes.Starting.OnClientEvent:Connect(function(class)
     if not classFuncs[class] then return end
     game:GetService("ReplicatedStorage").Classes.Starting:FireServer()
 
-    local newConnections = classFuncs[class]()
+    local newConnections = classFuncs[class]() or {}
 
     for _,connection in next, prevConnections do
         connection:Disconnect()
