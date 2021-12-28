@@ -165,7 +165,7 @@ end
 
 local function getBooks()
     repeat task.wait() until #localPlayer.Locker:GetChildren() == 5
-    task.wait(3)
+    task.wait(10)
     
     local locker = getLocker()
     fireclickdetector(locker.ClickDetector)
