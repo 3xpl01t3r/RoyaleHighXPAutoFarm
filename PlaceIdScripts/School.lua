@@ -159,22 +159,6 @@ local function getLocker()
     return closestLocker
 end
 
-local function goToLocker()
-    local tween = services.TweenService:Create(
-        localPlayer.Character.HumanoidRootPart,
-        TweenInfo.new(1, Enum.EasingStyle.Linear),
-        {CFrame = CFrame.new(Vector3.new(243, 3, -247))}
-    ); tween:Play()
-    tween.Completed:Wait()
-    
-    local tween = services.TweenService:Create( 
-        localPlayer.Character.HumanoidRootPart,
-        TweenInfo.new(3, Enum.EasingStyle.Linear),
-        {CFrame = CFrame.new(Vector3.new(35, 29, -182))}
-    ); tween:Play()
-    tween.Completed:Wait()
-end
-
 local function getBooks()
     local locker = getLocker()
     fireclickdetector(locker.ClickDetector)
@@ -187,5 +171,4 @@ local function getBooks()
     localPlayer.PlayerGui.Locker.Enabled = false
 end
 
-goToLocker()
 getBooks()
