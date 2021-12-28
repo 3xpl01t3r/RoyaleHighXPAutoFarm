@@ -14,6 +14,10 @@ function fireBack(remote, times, ...)
 end
 
 local classFuncs = {
+    swimming = function() end,
+    
+    art = function() end,
+    
     computer = function()
         return {fireBack(classRemotes.Computer, 1, 1)}
     end,
