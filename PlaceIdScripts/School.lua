@@ -144,7 +144,7 @@ localPlayer.ChildAdded:Connect(function(child)
             homework.Complete:FireServer()
             task.wait(.5)
             fireclickdetector(workspace["Homeworkbox_" .. homework.Name].Click.ClickDetector, 3)
-            if i == 3 then
+            if i == 3 and localPlayer.leaderstats.Level.Value < 75 then
                 task.wait(4)
                 services.ReplicatedStorage.SceptorTeleport:FireServer("BeachHouse")
             end
