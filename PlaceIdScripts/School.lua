@@ -27,7 +27,7 @@ local classFuncs = {
         
         local function fillCanvas()
             for name,num in next, getCanvasData() do
-                remote:FireServer(workspace.ArtClassReal.Easel.Canvas:FindFirstChild(name), BrickColor.new(num))
+                services.ReplicatedStorage.Tools.Paint.SetColor:FireServer(workspace.ArtClassReal.Easel.Canvas:FindFirstChild(name), BrickColor.new(num))
             end
         end
 		
