@@ -16,7 +16,26 @@ end
 local classFuncs = {
     swimming = function() end,
     
-    art = function() end,
+    art = function() 
+        local function getCanvasData()
+            local canvas = {}
+            for _,part in next, workspace.ArtClassReal.MainEasel.CanvasToCopy:GetChildren() do
+                canvas[part.Name] = part.BrickColor.Number
+            end
+            return canvas
+        end
+        
+        local function fillCanvas()
+            for name,num in next, getCanvasData() do
+                remote:FireServer(workspace.ArtClassReal.Easel.Canvas:FindFirstChild(name), BrickColor.new(num))
+            end
+        end
+
+        classRemotes.BookCheck.OnClientEvent:Connect(function()
+            task.wait(1)
+            fillCanvas()
+        end),
+    end,
     
     computer = function()
         return {fireBack(classRemotes.Computer, 1, 1)}
