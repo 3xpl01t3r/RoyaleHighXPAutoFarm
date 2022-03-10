@@ -30,11 +30,14 @@ local classFuncs = {
                 remote:FireServer(workspace.ArtClassReal.Easel.Canvas:FindFirstChild(name), BrickColor.new(num))
             end
         end
-
-        classRemotes.BookCheck.OnClientEvent:Connect(function()
-            task.wait(1)
-            fillCanvas()
-        end),
+		
+		
+        return {
+            classRemotes.BookCheck.OnClientEvent:Connect(function()
+                task.wait(1)
+                fillCanvas()
+            end)
+        }
     end,
     
     computer = function()
