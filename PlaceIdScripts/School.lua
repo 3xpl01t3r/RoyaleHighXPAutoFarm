@@ -51,7 +51,8 @@ local classFuncs = {
     pe = function()
         return {
             classRemotes.Timer.OnClientEvent:Connect(function()
-		task.wait(4)
+		localPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1604, 20, 9)
+		task.wait(1)
                 fireclickdetector(workspace["PE Class"].Bell.ClickDetector, 4)
             end)   
         }
