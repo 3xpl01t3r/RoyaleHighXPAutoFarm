@@ -51,6 +51,7 @@ local classFuncs = {
     pe = function()
         return {
             classRemotes.Timer.OnClientEvent:Connect(function()
+		task.wait(4)
                 fireclickdetector(workspace["PE Class"].Bell.ClickDetector, 4)
             end)   
         }
